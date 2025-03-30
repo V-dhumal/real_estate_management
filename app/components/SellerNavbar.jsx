@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
 
-const SellerNavbarComp = () => {
+const SellerNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -98,4 +98,4 @@ const SellerNavbarComp = () => {
   );
 };
 
-export default SellerNavbarComp;
+export default SellerNavbar;

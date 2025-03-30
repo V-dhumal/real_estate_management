@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const Profile = () => {
+const profile = () => {
   const { data: session, status } = useSession();
   const [user, setUser] = useState(null);
 
@@ -90,4 +90,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default profile;
