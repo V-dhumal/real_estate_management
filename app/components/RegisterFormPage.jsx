@@ -15,7 +15,7 @@ export default function RegisterForm({ role }) {
     password: "",
     country: "",
     image: null,
-    gender: "Male",
+    gender: "",
   });
   const [msg, setMsg] = useState("");
 
@@ -87,7 +87,7 @@ export default function RegisterForm({ role }) {
           password: "",
           country: "",
           image: null,
-          gender: "Male",
+          gender: "",
         });
         setMsg("");
         router.push(`/${role}/login`);
@@ -251,7 +251,7 @@ export default function RegisterForm({ role }) {
               href={`/${role}/login`}
               className="font-semibold text-purple-600 hover:text-purple-800 transition-colors"
             >
-              Login here Only
+              Login here 
             </Link>
           </p>
         </div>

@@ -88,7 +88,7 @@ const EditModal = ({ isOpen, onClose, formData, onInputChange, onUpdate }) => {
 
             <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-700">
-                Bedrooms
+                Bedroom
               </label>
               <input
                 type="number"
@@ -102,7 +102,7 @@ const EditModal = ({ isOpen, onClose, formData, onInputChange, onUpdate }) => {
 
             <div className="space-y-2">
               <label className="block text-sm font-medium text-gray-700">
-                Bathrooms
+                Bathroom
               </label>
               <input
                 type="number"

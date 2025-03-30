@@ -73,7 +73,7 @@ export default function LoginForm({ userType }) {
                 value={usernameOrEmail}
               />
               <label className="absolute left-4 top-0 text-xs font-semibold text-purple-600 transform -translate-y-1/2 bg-white px-1">
-                Username or Email
+                Username/Email
               </label>
             </div>
 
@@ -109,7 +109,7 @@ export default function LoginForm({ userType }) {
                 href={`/${userType}/register`}
                 className="font-semibold text-purple-600 hover:text-purple-800 transition-colors"
               >
-                Register here
+                Register Here
               </Link>
             </p>
           </form>
