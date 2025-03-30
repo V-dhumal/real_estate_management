@@ -17,20 +17,29 @@ export default function LoginForm({ userType }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!usernameOrEmail || !password) {
+      setMsg("Both fields are required.");
+      return;
+    }
+
     try {
       const res = await signIn("credentials", {
+        redirect: false,
         usernameOrEmail,
         password,
         userType,
-        redirect: false,
       });
 
-      if (res.error) {
+      if (res?.error) {
         setMsg("Invalid credentials. Please try again.");
         return;
       }
 
-      router.replace(`/${userType}/dashboard`);
+      if (res?.ok) {
+        router.replace(`/${userType}/dashboard`);
+      } else {
+        setMsg("Something went wrong. Please try again.");
+      }
     } catch (error) {
       console.log("Error during login: ", error);
       setMsg("An error occurred during login.");
@@ -39,7 +48,7 @@ export default function LoginForm({ userType }) {
 
   useEffect(() => {
     if (msg) {
-      const timer = setTimeout(() => setMsg(""), 1500);
+      const timer = setTimeout(() => setMsg(""), 3000);
       return () => clearTimeout(timer);
     }
   }, [msg]);

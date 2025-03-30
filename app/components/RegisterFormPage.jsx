@@ -13,7 +13,7 @@ export default function RegisterForm({ role }) {
     phone: "",
     address: "",
     password: "",
-    country: "Bangladesh",
+    country: "",
     image: null,
     gender: "Male",
   });
@@ -32,6 +32,7 @@ export default function RegisterForm({ role }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Check if all required fields are filled
     if (
       !formData.fullname ||
       !formData.username ||
@@ -45,6 +46,7 @@ export default function RegisterForm({ role }) {
     }
 
     try {
+      // Check if the user already exists
       const resUserExists = await fetch(`/api/${role}/userExists`, {
         method: "POST",
         headers: {
@@ -63,11 +65,13 @@ export default function RegisterForm({ role }) {
         return;
       }
 
+      // Prepare the form data for submission
       const formDataToSend = new FormData();
       for (const key in formData) {
         formDataToSend.append(key, formData[key]);
       }
 
+      // Submit the registration request
       const res = await fetch(`/api/${role}/register`, {
         method: "POST",
         body: formDataToSend,
@@ -81,7 +85,7 @@ export default function RegisterForm({ role }) {
           phone: "",
           address: "",
           password: "",
-          country: "Bangladesh",
+          country: "",
           image: null,
           gender: "Male",
         });
@@ -247,7 +251,7 @@ export default function RegisterForm({ role }) {
               href={`/${role}/login`}
               className="font-semibold text-purple-600 hover:text-purple-800 transition-colors"
             >
-              Login here
+              Login here Only
             </Link>
           </p>
         </div>
