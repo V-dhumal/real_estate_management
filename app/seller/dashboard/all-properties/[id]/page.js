@@ -60,7 +60,7 @@ export default async function AllPropertyDetails({ params }) {
               </span>
             </p>
             <p className="text-gray-600 text-lg sm:text-xl mb-4">
-              <strong>Description:</strong> {propertyWithDetails.description}
+              <strong>Description :</strong> {propertyWithDetails.description}
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default async function AllPropertyDetails({ params }) {
                 <strong>Bathrooms:</strong> {propertyWithDetails.bathrooms}
               </p>
               <p className="text-lg">
-                <strong>Total Area:</strong> {propertyWithDetails.totalArea}{' '}
+                <strong>Total Area :</strong> {propertyWithDetails.totalArea}{' '}
                 sqft
               </p>
               <p className="text-lg">

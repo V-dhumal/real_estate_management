@@ -4,8 +4,8 @@ const districtSchema = new mongoose.Schema({
   name: { type: String, required: true },
   division: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Division',
-    required: true,
+    ref:'Division',
+    required:true,
   },
 })
 

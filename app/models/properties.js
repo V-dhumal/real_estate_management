@@ -8,10 +8,10 @@ const PropertySchema = new mongoose.Schema(
       enum: ['House', 'Apartment'],
       required: true,
     },
-    price: { type: Number, required: true },
-    bedrooms: { type: Number, required: true },
-    bathrooms: { type: Number, required: true },
-    totalArea: { type: Number, required: true },
+    price: { type: Number, required:true },
+    bedrooms: { type: Number, required:true },
+    bathrooms: { type: Number, required:true },
+    totalArea: { type: Number, required:true },
     address: { type: String, required: true },
     division: {
       type: mongoose.Schema.Types.ObjectId,
@@ -38,7 +38,7 @@ const PropertySchema = new mongoose.Schema(
     phone: { type: String, required: true },
     image: {
       type: String,
-      required: true,
+      required:true,
     },
   },
   { timestamps: true },

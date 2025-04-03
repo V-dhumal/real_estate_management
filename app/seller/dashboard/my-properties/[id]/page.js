@@ -11,7 +11,7 @@ export default async function PropertyDetails({ params }) {
   const property = await Property.findById(id)
 
   if (!property) {
-    return <p>Property not found</p>
+    return <p>Property not found!!</p>
   }
 
   return (
