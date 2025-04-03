@@ -5,6 +5,15 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { redirect } from 'next/navigation'
 import NavbarSection from './components/Navbar'
 import FooterSection from './components/Footer'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import RealEstateSlider from "./RealEstateSlider";
+
+<section>
+  <RealEstateSlider />
+</section>
+
 
 export default async function HomePage() {
   const session = await getServerSession(authOptions)
@@ -16,6 +25,25 @@ export default async function HomePage() {
       redirect('/buyer/dashboard')
     }
   }
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
+  const sliderImages = [
+    "/images/dream-house-banner.jpg",
+    "/images/property-1.jpg",
+    "/images/property-2.jpg",
+    "/images/property-3.jpg",
+    "/images/property-4.jpg",
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <NavbarSection />
@@ -31,13 +59,15 @@ export default async function HomePage() {
         </section>
 
         <section className="relative w-full h-64 sm:h-80 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-2xl">
-          <Image
-            src="/images/dream-house-banner.jpg"
-            alt="Real Estate Banner"
-            fill
-            className="object-cover rounded-2xl"
-          />
+          <Slider {...sliderSettings}>
+            {sliderImages.map((image, index) => (
+              <div key={index} className="w-full h-full">
+                <Image src={image} alt={`Slide ${index + 1}`} fill className="object-cover rounded-2xl" />
+              </div>
+            ))}
+          </Slider>
         </section>
+
         <section className="grid sm:grid-cols-2 gap-8 mb-12">
           <article className="bg-gradient-to-br from-blue-400 to-blue-600 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <h3 className="text-3xl font-bold mb-4 text-white">For Buyers</h3>

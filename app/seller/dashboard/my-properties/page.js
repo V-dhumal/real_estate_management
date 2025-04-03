@@ -9,7 +9,7 @@ export default async function PropertyShowPage() {
   const session = await getServerSession(authOptions)
 
   if (!session) {
-    redirect('/seller/login')
+    redirect('/seller/login ')
   }
 
   return (

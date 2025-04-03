@@ -7,5 +7,5 @@ export default async function SellerRegisterPage() {
   const session = await getServerSession(authOptions);
 
   if (session) redirect("/seller/dashboard");
-  return <RegisterForm role="seller" />;
+  return <RegisterForm role="seller " />;
 }
